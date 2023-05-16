@@ -27,7 +27,7 @@ def send_notifying_mail(mail_user: str = "", mail_password: str = "") -> None:
   server.quit();
   
   if __name__ == "__main__":
-      enviar_mail(user_gmail, password_gmail)
+      send_notifying_mail(user_gmail, password_gmail)
 send_notifying_mail(user_gmail, password_gmail)
 
 
