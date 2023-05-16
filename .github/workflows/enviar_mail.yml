@@ -24,7 +24,7 @@ jobs:
         pip install pandas
 
     - name: Ejecutar script Python
-      run: python3 enviar_mail.py
+      run: python3 send_notifying_mail.py
       env:
         USER_GMAIL: ${{ secrets.USER_GMAIL }}
         PASSWORD_GMAIL: ${{ secrets.PASSWORD_GMAIL }}
