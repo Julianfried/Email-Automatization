@@ -1,1 +1,30 @@
 
+name: Enviar correo
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */3 * * *'  # se ejecuta cada 3 horas
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Configuración del entorno Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.10'
+
+    - name: Instalar dependencias
+      run: | # aqui puedes instalar usando el requirements.txt
+        python -m pip install --upgrade pip
+        pip install pandas
+
+    - name: Ejecutar script Python
+      run: python3 enviar_mail.py
+      env:
+        USER_GMAIL: ${{ secrets.USER_GMAIL }}
+        PASSWORD_GMAIL: ${{ secrets.PASSWORD_GMAIL }}
