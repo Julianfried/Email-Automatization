@@ -2,11 +2,11 @@ import os
 import smtplib
 from email.message import EmailMessage
 
-
+mail_user = os.getenv('USER_GMAIL')
+mail_password = os.getenv('PASSWORD_GMAIL')
 
 def send_notifying_mail(mail_user: str = "", mail_password: str = "") -> None:
-  mail_user = os.getenv('USER_GMAIL')
-  mail_password = os.getenv('PASSWORD_GMAIL')
+
   msg = EmailMessage()
   # Contenido
   msg['From']= mail_user
