@@ -25,7 +25,6 @@ def send_notifying_mail(mail_user: str = "", mail_password: str = "") -> None:
   
 mail_user = os.getenv('USER_GMAIL')
 mail_password = os.getenv('PASSWORD_GMAIL') 
-send_notifying_mail(mail_user, mail_password)
 
 if __name__ == "__main__":
   send_notifying_mail(mail_user, mail_password)
