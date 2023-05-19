@@ -9,7 +9,7 @@ def send_notifying_mail(mail_user: str = "", mail_password: str = "") -> None:
   password_gmail = os.getenv('PASSWORD_GMAIL')
   # Contenido
   msg['From']= user_gmail
-  msg['To']= password_gmail
+  msg['To']= user_gmail
   msg['Subject']= "Probando mandar mails!"
   cuerpo_del_mail = 'Este es un mail enviado con Python en la clase! =D'
   msg.set_content(cuerpo_del_mail)
