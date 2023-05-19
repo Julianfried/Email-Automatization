@@ -2,9 +2,6 @@ import os
 import smtplib
 from email.message import EmailMessage
 
-mail_user = os.getenv('USER_GMAIL')
-mail_password = os.getenv('PASSWORD_GMAIL')
-
 def send_notifying_mail(mail_user: str = "", mail_password: str = "") -> None:
 
   msg = EmailMessage()
@@ -26,6 +23,9 @@ def send_notifying_mail(mail_user: str = "", mail_password: str = "") -> None:
   server.send_message(msg)
   server.quit();
   
+mail_user = os.getenv('USER_GMAIL')
+mail_password = os.getenv('PASSWORD_GMAIL') 
+send_notifying_mail(mail_user, mail_password)
 
 if __name__ == "__main__":
   send_notifying_mail(mail_user, mail_password)
